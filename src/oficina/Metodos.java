@@ -151,7 +151,22 @@ public class Metodos {
         modelo = input.next();
 
         Clientes cliente1 = new Clientes(codC, nome, email, telefone, modelo);
+        if (listaclientes.size() > 0) {
+            int ultimapeca = listaclientes.get(listaclientes.size()-1).getCodigo();
+            
+            cliente1.setCodigo(ultimapeca+1);//parte do codigo que seta 
+            listaclientes.add(cliente1);
+            Principal.entradaArquivo(listaclientes, enderecoCli);
+            cliente1 = listaclientes.get(codC);
+            codC++;
+            Principal.saidaArquivo(listaclientes, enderecoCli);
+        } else {
+            listaclientes.add(cliente1);
+        Principal.entradaArquivo(listaclientes, enderecoCli);
+        cliente1 = listaclientes.get(codC);
         codC++;
+        }
+        
 
         listaclientes.add(cliente1);
         System.out.println("Dados inseridos com sucesso");
