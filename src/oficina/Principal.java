@@ -47,6 +47,7 @@ public class Principal {
         Orcamento orca = new Orcamento();
 
         //função chamadora de metodos
+        
         Metodos metodos = new Metodos();
         int opcao1, opcao2;
 
@@ -61,6 +62,7 @@ public class Principal {
                     //Exibição do menu de peças
                     metodos.menuPecas();
                     System.out.println("Você esta no menu peças, escolha uma opção");
+                    System.out.println("Faça uma escolha no menu:");
                     opcao2 = input.nextInt();
                     while (opcao2 != 0) {
                         switch (opcao2) {
